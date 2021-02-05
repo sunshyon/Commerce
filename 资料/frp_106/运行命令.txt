@@ -1,3 +1,0 @@
-
-server: .\frps.exe -c frps.ini
-clinet: .\frpc.exe -c frpc.ini
