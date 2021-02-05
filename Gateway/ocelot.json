@@ -1,0 +1,35 @@
+{
+  "Routes": [
+    {
+      "UpstreamPathTemplate": "/{url}", //上游请求地址--网关
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Options" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "127.0.0.1",
+          "Port": 8081 //网关api 端口
+        }
+      ],
+      "DownstreamPathTemplate": "/{url}", //服务地址--url变量
+      "DownstreamScheme": "http"
+      //"DownstreamHeaderTransform": { //跨域
+      //  "Access-Control-Allow-Origin": "*", //不存在就添加
+      //  "Access-Control-Allow-Methods": "*",
+      //  "Access-Control-Allow-Headers": "*"
+      //}
+    },
+
+    //***Swagger***//
+    {
+      "UpstreamPathTemplate": "/authAndUser/swagger/v1/swagger.json",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "127.0.0.1",
+          "Port": 8081 //网关api 端口
+        }
+      ],
+      "DownstreamPathTemplate": "/swagger/v1/swagger.json",
+      "DownstreamScheme": "http"
+    }
+  ]
+}
