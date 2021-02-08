@@ -41,7 +41,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSUnitTest_RabbitMQ", "MSUn
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Works", "Works", "{67C92821-E944-431D-82F4-60B23DC45898}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESProcessor", "ESProcessor\ESProcessor.csproj", "{F58C05AF-D38B-47DC-AED5-9857F827E764}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ESProcessor", "ESProcessor\ESProcessor.csproj", "{F58C05AF-D38B-47DC-AED5-9857F827E764}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoodsRelatedMicroservice", "GoodsRelatedMicroservice\GoodsRelatedMicroservice.csproj", "{41A0B966-C873-4A6A-9BD4-410EBB0302E6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,6 +107,10 @@ Global
 		{F58C05AF-D38B-47DC-AED5-9857F827E764}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F58C05AF-D38B-47DC-AED5-9857F827E764}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F58C05AF-D38B-47DC-AED5-9857F827E764}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41A0B966-C873-4A6A-9BD4-410EBB0302E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41A0B966-C873-4A6A-9BD4-410EBB0302E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41A0B966-C873-4A6A-9BD4-410EBB0302E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41A0B966-C873-4A6A-9BD4-410EBB0302E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -125,6 +131,7 @@ Global
 		{5B75ECC3-6A38-4282-A6A7-502030F09071} = {980A470C-DCBB-417C-8DD4-405E8077C9AE}
 		{67C92821-E944-431D-82F4-60B23DC45898} = {9FA90E75-12FA-4B92-AEC3-DC4945046F1A}
 		{F58C05AF-D38B-47DC-AED5-9857F827E764} = {67C92821-E944-431D-82F4-60B23DC45898}
+		{41A0B966-C873-4A6A-9BD4-410EBB0302E6} = {00F41CB4-7BE8-442D-9CCA-5EB8D595A471}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4E216490-6F4B-4F00-844F-6070703DC7EA}

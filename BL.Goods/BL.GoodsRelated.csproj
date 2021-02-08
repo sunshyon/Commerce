@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Base.Common\Base.Common.csproj" />
+    <ProjectReference Include="..\Base.ThirdTool\Base.ThirdTool.csproj" />
     <ProjectReference Include="..\Base.Utility\Base.Utility.csproj" />
     <ProjectReference Include="..\BL.Contracts\BL.Contracts.csproj" />
     <ProjectReference Include="..\Domain\Domain.csproj" />

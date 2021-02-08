@@ -8,6 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Base.Utility;
+using Base.ThirdTool;
 
 namespace BL.GoodsRelated
 {
@@ -16,15 +17,48 @@ namespace BL.GoodsRelated
         private readonly OrangeContext _orangeContext;
         private readonly GoodsService _goodsService;
         private readonly SpecService _specService;
+        private readonly ElasticSearchClient _elasticSearch;
 
         public SearchService(OrangeContext orangeContext,
             GoodsService goodsService,
-            SpecService specService
+            SpecService specService,
+            ElasticSearchClient elasticSearch
             )
         {
             _orangeContext = orangeContext;
             _goodsService = goodsService;
             _specService = specService;
+            _elasticSearch = elasticSearch;
+        }
+        /// <summary>
+        /// ES搜索查询
+        /// </summary>
+        public void EsQuery(string queryContent)
+        {
+             var client= _elasticSearch.GetEsClient();
+            var list = client.Search<Goods>(s => s
+               .Query(q => q
+                    .Match(m => m
+                       .Field(f => f.all)
+                       .Query(queryContent)
+                    )
+               )).Documents.ToList();
+
+            var total = client.Search<Goods>(s => s
+                .Query(q => q
+                     .Match(m => m
+                        .Field(f => f.all)
+                        .Query(queryContent)
+                     )
+                )).Documents.Count();
+
+            var cid3s = list.Select(m => m.cid3).Distinct().ToList();
+            var brandIds = list.Select(m => m.brandId).Distinct().ToList();
+
+            /*
+              将结果进行业务聚合
+              ....
+            */
         }
 
         public Goods GetGoodsBySpuId(long spuId)

@@ -20,6 +20,10 @@ namespace Base.ThirdTool
                 .DefaultIndex(_configuration["ElasticSearch:DefaultIndex"]);
             _client = new ElasticClient(settings);
         }
+        public ElasticClient GetEsClient()
+        {
+            return _client;
+        }
         public void Send<T>(List<T> model) where T : class
         {
             _client.IndexMany(model);
