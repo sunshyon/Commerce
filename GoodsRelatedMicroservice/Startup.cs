@@ -4,6 +4,7 @@ using BL.GoodsRelated;
 using Domain.DbModels;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -50,9 +51,9 @@ namespace GoodsRelatedMicroservice
             services.AddDynamicWebApi();
 
             #region ThirdTool
+            services.AddSingleton<RabbitMQClient>();
             services.AddScoped<RedisClient>();
-            services.AddScoped<ElasticSearchClient>();
-            services.AddScoped<RabbitMQClient>();
+            services.AddScoped<EsClient>();
             #endregion
 
             #region EF+Mysql
@@ -76,6 +77,13 @@ namespace GoodsRelatedMicroservice
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "GoodsRelatedMicroservice v1"));
             }
+
+            //用于过滤器中读取post body
+            app.Use(next => context =>
+            {
+                context.Request.EnableBuffering();
+                return next(context);
+            });
 
             app.UseRouting();
 

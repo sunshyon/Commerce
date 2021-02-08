@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace Base.ThirdTool
 {
-    public class ElasticSearchClient
+    public class EsClient
     {
         private  ElasticClient _client;
         private readonly IConfiguration _configuration;
 
-        public ElasticSearchClient(IConfiguration configuration)
+        public EsClient(IConfiguration configuration)
         {
             _configuration = configuration;
             var settings = new ConnectionSettings(new Uri(_configuration["ElasticSearch:Url"]))

@@ -17,12 +17,12 @@ namespace BL.GoodsRelated
         private readonly OrangeContext _orangeContext;
         private readonly GoodsService _goodsService;
         private readonly SpecService _specService;
-        private readonly ElasticSearchClient _elasticSearch;
+        private readonly EsClient _elasticSearch;
 
         public SearchService(OrangeContext orangeContext,
             GoodsService goodsService,
             SpecService specService,
-            ElasticSearchClient elasticSearch
+            EsClient elasticSearch
             )
         {
             _orangeContext = orangeContext;

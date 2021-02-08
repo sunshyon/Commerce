@@ -18,13 +18,13 @@ namespace ESProcessor
     {
         private readonly ILogger<InitESIndexWorker> _logger;
         private readonly RabbitMQClient _rabbitMQ;
-        private readonly ElasticSearchClient _elasticSearch;
+        private readonly EsClient _elasticSearch;
         private readonly SearchService _searchService;
         private readonly InitDataServcie _initDataServcie;
 
         public InitESIndexWorker(ILogger<InitESIndexWorker> logger, 
             RabbitMQClient rabbitMQ,
-            ElasticSearchClient elasticSearch,
+            EsClient elasticSearch,
             SearchService searchService,
             InitDataServcie initDataServcie
             )

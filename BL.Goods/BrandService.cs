@@ -1,5 +1,6 @@
 ﻿using BL.Contracts;
 using Domain.DbModels;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,12 @@ namespace BL.GoodsRelated
 		{
 			_db = orangeContext;
 		}
+		[HttpPost]
+		public object PostTest([FromBody] dynamic data)
+        {
+			throw new Exception("nothing");
+			return "ok";
+        }
 		public TbBrand QueryBrandByBid(long id)
 		{
 			TbBrand b1 = _db.TbBrand.Where(m => m.Id == id).FirstOrDefault();

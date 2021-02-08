@@ -84,9 +84,9 @@ namespace AuthAndUserMicroservice
             #endregion
 
             #region ThirdTool
+            services.AddSingleton<RabbitMQClient>();
             services.AddScoped<RedisClient>();
             //services.AddScoped<ElasticSearchClient>();
-            services.AddScoped<RabbitMQClient>();
             #endregion
 
             #region EF+Mysql

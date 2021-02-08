@@ -29,7 +29,7 @@ namespace ESProcessor
 
                     services.AddTransient<OrangeContext>();
                     services.AddTransient<GoodsService>();
-                    services.AddTransient<ElasticSearchClient>();
+                    services.AddTransient<EsClient>();
                     services.AddTransient<SearchService>();
                     services.AddTransient<InitDataServcie>(); 
                     services.AddTransient<SpecService>();
