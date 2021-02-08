@@ -18,12 +18,14 @@ namespace Base.ThirdTool
     public class RabbitMQClient
     {
         private readonly string _hostName = null;
+        private readonly int _port = 5672;
         private readonly string _userName = null;
         private readonly string _password = null;
 
         public RabbitMQClient(IConfiguration configuration)
         {
             _hostName = configuration.GetSection("RabbitMQ:Host").Value;
+            int.TryParse(configuration.GetSection("RabbitMQ:Port").Value,out _port);
             _userName = configuration.GetSection("RabbitMQ:UserName").Value;
             _password = configuration.GetSection("RabbitMQ:Password").Value;
         }
@@ -165,6 +167,7 @@ namespace Base.ThirdTool
                         var factory = new ConnectionFactory()
                         {
                             HostName = this._hostName,
+                            Port=this._port,
                             Password = this._password,
                             UserName = this._userName
                         };
