@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BL.Goods
+namespace BL.GoodsRelated
 {
     public class SpecService:BaseService
     {

@@ -3,7 +3,7 @@ using System.Text.Json;
 
 namespace Base.ThirdTool
 {
-    public static class Utils
+    internal static class Utils
     {
         public static string ToJson(this object obj)
         {

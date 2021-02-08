@@ -1,6 +1,6 @@
 using Base.WebExtend.Middlewares;
 using BL.Contracts;
-using BL.Goods;
+using BL.GoodsRelated;
 using Domain.DbModels;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

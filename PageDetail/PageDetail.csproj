@@ -7,7 +7,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Base.WebExtend\Base.WebExtend.csproj" />
     <ProjectReference Include="..\BL.Contracts\BL.Contracts.csproj" />
-    <ProjectReference Include="..\BL.Goods\BL.Goods.csproj" />
+    <ProjectReference Include="..\BL.Goods\BL.GoodsRelated.csproj" />
   </ItemGroup>
 
 </Project>

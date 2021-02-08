@@ -3,7 +3,7 @@ using Domain.DbModels;
 using System;
 using System.Collections.Generic;
 
-namespace BL.Goods
+namespace BL.GoodsRelated
 {
     public class PageDetailService : IPageDetailService
     {
